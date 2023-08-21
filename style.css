@@ -1,3 +1,6 @@
+body {
+    margin: 0;
+}
 
 .container {
     margin-left: 33%;
@@ -7,7 +10,7 @@
 }
 
 .img {
-    width: 30vw;
-    height: 22vw;
+    width: 33vw;
+    height: 26vw;
     background-size: cover;
 }

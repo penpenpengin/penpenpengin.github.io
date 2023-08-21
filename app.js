@@ -1,6 +1,7 @@
 
 let container = document.querySelector('.container');
 let images = [...document.querySelectorAll('.img')];
+
 let thunder = document.getElementById('thunder');
 thunder.volume = 0.4;
 
@@ -10,6 +11,8 @@ images.forEach((image, _) => {
     image.style.backgroundImage = `url(media/saker-0.png)`;
 });
 images[8].style.backgroundImage = `url(media/saker-1.png)`;
+
+document.body.style.backgroundImage = 'url(media/rain.gif)'
 
 function addPanel() {
     let panel = document.createElement('div');
@@ -22,6 +25,9 @@ function addPanel() {
     container.appendChild(panel);
 }
 
+function lightning() {
+}
+
 function scrollUpdate() {
     scrollPos = window.scrollY + window.innerHeight;
     if (scrollPos > document.body.offsetHeight*0.95) {
@@ -29,12 +35,19 @@ function scrollUpdate() {
     }
 
     let img_height = images[0].scrollHeight;
-    let img_idx = Math.round(window.scrollY/img_height + 1);
-    if(vals[img_idx] == 1) {
+    let img_idx = Math.round(window.scrollY/img_height + 0.5);
+    if(vals[img_idx] == 1 || vals[img_idx - 1] == 1) {
+        document.body.style.backgroundImage = 'url(media/lightning.gif)'
         thunder.play();
+    } else {
+        document.body.style.backgroundImage = 'url(media/rain.gif)';
     }
 
     requestAnimationFrame(scrollUpdate);
 }
 
-scrollUpdate();
+function onLoad() {
+    scrollUpdate();
+}
+
+onLoad();
