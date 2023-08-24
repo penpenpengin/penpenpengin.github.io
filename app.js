@@ -3,7 +3,7 @@ let container = document.querySelector('.container');
 let images = [...document.querySelectorAll('.img')];
 
 let thunder = document.getElementById('thunder');
-thunder.volume = 0.4;
+thunder.volume = 0.5;
 
 let vals = new Array(images.length).fill(0);
 vals[8] = 1;
@@ -25,9 +25,6 @@ function addPanel() {
     container.appendChild(panel);
 }
 
-function lightning() {
-}
-
 function scrollUpdate() {
     scrollPos = window.scrollY + window.innerHeight;
     if (scrollPos > document.body.offsetHeight*0.95) {
@@ -46,8 +43,34 @@ function scrollUpdate() {
     requestAnimationFrame(scrollUpdate);
 }
 
-function onLoad() {
+/* (yes, this was copy-pasted) */
+function disableScroll() {
+    // Get the current page scroll position
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+
+    // if any scroll is attempted, set this to the previous value
+    window.onscroll = function() {
+        window.scrollTo(scrollLeft, scrollTop);
+    };
+}
+
+function enableScroll() {
+    window.onscroll = function() {};
+}
+
+function load() {
+    let playdiv = document.querySelector('.play');
+    let play_img = document.querySelector('.play-img');
+    playdiv.style.animation = 'fadeout-play 2s forwards';
+    play_img.style.animation = 'fadeout-play-img 2s forwards'
+
+    let rain = document.getElementById('rain');
+    rain.volume = 0.5;
+    rain.play();    
+
+    enableScroll();
     scrollUpdate();
 }
 
-onLoad();
+disableScroll();
