@@ -21,15 +21,15 @@ body {
 }
 
 .play-img {
-    width: 15vw;
-    height: 25vw;
+    width: 16vw;
+    height: 29.5vw;
     background: url(media/eating.png);
     background-size: cover;
 }
 
 .play-img:hover {
-    width: 17vw;
-    height: 30vw;
+    width: 16vw;
+    height: 32.5vw;
     background: url(media/wa.png);
     background-size: cover;
 }
@@ -46,13 +46,17 @@ body {
 @keyframes fadeout-play-img {
     0% {
         opacity: 1;
-        width: 17vw;
-        height: 30vw;
+        width: 16vw;
+        height: 31.5vw;
         background: url(media/happy.png);
         background-size: cover;
     }
     100% {
         opacity: 0;
+        width: 16vw;
+        height: 31.5vw;
+        background: url(media/happy.png);
+        background-size: cover;
     }
 }
 
