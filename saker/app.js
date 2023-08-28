@@ -8,11 +8,11 @@ thunder.volume = 0.5;
 let vals = new Array(images.length).fill(0);
 vals[8] = 1;
 images.forEach((image, _) => {
-    image.style.backgroundImage = `url(media/saker-0.png)`;
+    image.style.backgroundImage = `url(/assets/saker-0.png)`;
 });
-images[8].style.backgroundImage = `url(media/saker-1.png)`;
+images[8].style.backgroundImage = `url(/assets/saker-1.png)`;
 
-document.body.style.backgroundImage = 'url(media/rain.gif)'
+document.body.style.backgroundImage = 'url(/assets/rain.gif)'
 
 function addPanel() {
     let panel = document.createElement('div');
@@ -20,7 +20,7 @@ function addPanel() {
     
     if (vals.slice(-10).includes(1)) { vals.push(0); }
     else { vals.push(Math.round(Math.random()*0.6)); }
-    panel.style.backgroundImage = `url(media/saker-${vals[vals.length - 1]}.png)`;
+    panel.style.backgroundImage = `url(/assets/saker-${vals[vals.length - 1]}.png)`;
     
     container.appendChild(panel);
 }
@@ -45,10 +45,10 @@ function scrollUpdate() {
     }
 
     if(inThunder()) {
-        document.body.style.backgroundImage = 'url(media/lightning.gif)'
+        document.body.style.backgroundImage = 'url(/assets/lightning.gif)'
         thunder.play();
     } else {
-        document.body.style.backgroundImage = 'url(media/rain.gif)';
+        document.body.style.backgroundImage = 'url(/assets/rain.gif)';
     }
 
     requestAnimationFrame(scrollUpdate);

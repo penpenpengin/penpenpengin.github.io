@@ -23,14 +23,14 @@ body {
 .play-img {
     width: 16vw;
     height: 29.5vw;
-    background: url(media/eating.png);
+    background: url(/assets/eating.png);
     background-size: cover;
 }
 
 .play-img:hover {
     width: 16vw;
     height: 32.5vw;
-    background: url(media/wa.png);
+    background: url(/assets/wa.png);
     background-size: cover;
 }
 
@@ -48,14 +48,14 @@ body {
         opacity: 1;
         width: 16vw;
         height: 31.5vw;
-        background: url(media/happy.png);
+        background: url(/assets/happy.png);
         background-size: cover;
     }
     100% {
         opacity: 0;
         width: 16vw;
         height: 31.5vw;
-        background: url(media/happy.png);
+        background: url(/assets/happy.png);
         background-size: cover;
     }
 }
@@ -90,14 +90,14 @@ body {
     .play-img {
         width: 25vw;
         height: 47vw;
-        background: url(media/eating.png);
+        background: url(/assets/eating.png);
         background-size: cover;
     }
     
     .play-img:hover {
         width: 25vw;
         height: 51vw;
-        background: url(media/wa.png);
+        background: url(/assets/wa.png);
         background-size: cover;
     }
 
@@ -106,14 +106,14 @@ body {
             opacity: 1;
             width: 26vw;
             height: 51vw;
-            background: url(media/happy.png);
+            background: url(/assets/happy.png);
             background-size: cover;
         }
         100% {
             opacity: 0;
             width: 26vw;
             height: 51vw;
-            background: url(media/happy.png);
+            background: url(/assets/happy.png);
             background-size: cover;
         }
     }
