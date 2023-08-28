@@ -60,14 +60,61 @@ body {
     }
 }
 
-.container {
-    margin-left: 33%;
-    flex-direction: column;
-    justify-content: center;
+@media (min-aspect-ratio: 1) {
+    .container {
+        margin-left: 33%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .img {
+        width: 33vw;
+        height: 26vw;
+        background-size: cover;
+    }
 }
 
-.img {
-    width: 33vw;
-    height: 26vw;
-    background-size: cover;
+@media (max-aspect-ratio: 1) {
+    .container {
+        margin-left: 20vw;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .img {
+        width: 60vw;
+        height: 48vw;
+        background-size: cover;
+    }
+
+    .play-img {
+        width: 25vw;
+        height: 47vw;
+        background: url(media/eating.png);
+        background-size: cover;
+    }
+    
+    .play-img:hover {
+        width: 25vw;
+        height: 51vw;
+        background: url(media/wa.png);
+        background-size: cover;
+    }
+
+    @keyframes fadeout-play-img {
+        0% {
+            opacity: 1;
+            width: 26vw;
+            height: 51vw;
+            background: url(media/happy.png);
+            background-size: cover;
+        }
+        100% {
+            opacity: 0;
+            width: 26vw;
+            height: 51vw;
+            background: url(media/happy.png);
+            background-size: cover;
+        }
+    }
 }

@@ -25,15 +25,26 @@ function addPanel() {
     container.appendChild(panel);
 }
 
+function inThunder() {
+    let img_height = images[0].scrollHeight;
+    let img_idx = Math.round(window.scrollY/img_height + 0.5);
+    
+    let ratio = screen.width/screen.height;
+    if(ratio > 1) {
+        return vals[img_idx] == 1 || vals[img_idx - 1] == 1;
+    } else {
+        img_idx += 2;
+        return vals[img_idx] == 1 || vals[img_idx - 1] == 1 || vals[img_idx - 2] == 1;
+    }
+}
+
 function scrollUpdate() {
     scrollPos = window.scrollY + window.innerHeight;
     if (scrollPos > document.body.offsetHeight*0.95) {
         addPanel();
     }
 
-    let img_height = images[0].scrollHeight;
-    let img_idx = Math.round(window.scrollY/img_height + 0.5);
-    if(vals[img_idx] == 1 || vals[img_idx - 1] == 1) {
+    if(inThunder()) {
         document.body.style.backgroundImage = 'url(media/lightning.gif)'
         thunder.play();
     } else {
@@ -48,6 +59,7 @@ function disableScroll() {
     // Get the current page scroll position
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    window.scrollTo(0, 0);
 
     // if any scroll is attempted, set this to the previous value
     window.onscroll = function() {
@@ -71,6 +83,10 @@ function load() {
 
     enableScroll();
     scrollUpdate();
+}
+
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
 }
 
 disableScroll();
